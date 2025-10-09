@@ -41,10 +41,7 @@ class VirtualCamera:
 
             
     def capture_cv_video(self, camera_id, bgr_to_rgb=False):
-        '''
-        Establishes the connection to the camera via opencv
-        Source: https://github.com/letmaik/pyvirtualcam/blob/master/samples/webcam_filter.py
-        '''
+       
         cv_vid = cv2.VideoCapture(camera_id)
 
         if not cv_vid.isOpened():
@@ -88,3 +85,4 @@ class VirtualCamera:
                 rgb_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
                 cam.send(rgb_img)
                 cam.sleep_until_next_frame()
+
